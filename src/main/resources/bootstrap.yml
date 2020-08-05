@@ -1,0 +1,19 @@
+server:
+  port: ${CONFIG_PORT:8888}
+ 
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: ${https://github.com/jesus-rs-0803/config-server.git}
+          username: ${jesus-rs-0803}
+          password: ${P@$$w0rD-2o2o}
+  
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URI:http://localhost:${EUREKA_PORT:8761}/eureka}
+    register-with-eureka: true
